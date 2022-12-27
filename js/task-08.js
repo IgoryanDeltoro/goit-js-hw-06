@@ -8,7 +8,7 @@ function handleEventForm(event) {
   const { email, password } = event.currentTarget.elements;
 
   if (email.value === "" || password.value === "") {
-    alert("Error:  " + "Input fields are empty. Please fill in these fields.");
+    alert("Error:  " + "Input fields are empty. Please fill in all fields.");
     return;
   }
   console.log(
