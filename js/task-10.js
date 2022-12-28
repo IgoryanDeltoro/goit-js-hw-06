@@ -9,10 +9,10 @@ const btnCreate = document.querySelector("button[data-create]");
 const btnDestroy = document.querySelector("button[data-destroy]");
 const divElementWitId = document.querySelector("#boxes");
 
-let getValue = 0;
+let getValue;
 
 inputElementWithAtribut.addEventListener("change", (event) => {
-  getValue = +event.currentTarget.value;
+  getValue = event.currentTarget.value;
 });
 
 inputElementWithAtribut.addEventListener("blur", () => {
@@ -24,7 +24,7 @@ btnCreate.addEventListener("click", () => {
   divElementWitId.append(...createdBoxes);
 });
 
-btnDestroy.addEventListener("click", () => destroyBoxes());
+btnDestroy.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
   let arrOfAmount = [];
@@ -45,5 +45,5 @@ function createBoxes(amount) {
 function destroyBoxes() {
   const childrenOfBoxe = divElementWitId.children;
   [...childrenOfBoxe].forEach((element) => element.remove());
-  getValue = 0;
+  getValue;
 }
