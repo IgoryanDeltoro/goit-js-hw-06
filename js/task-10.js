@@ -12,7 +12,7 @@ const divElementWitId = document.querySelector("#boxes");
 let getValue;
 
 inputElementWithAtribut.addEventListener("change", (event) => {
-  getValue = event.currentTarget.value;
+  getValue = +event.currentTarget.value;
 });
 
 inputElementWithAtribut.addEventListener("blur", () => {
@@ -27,6 +27,7 @@ btnCreate.addEventListener("click", () => {
 btnDestroy.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
+  console.log(amount);
   let arrOfAmount = [];
   for (let i = 0; i < amount; i++) arrOfAmount.push(i);
 
