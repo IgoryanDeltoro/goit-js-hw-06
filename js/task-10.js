@@ -19,28 +19,24 @@ inputElementWithAtribut.addEventListener("blur", () => {
   inputElementWithAtribut.value = "";
 });
 
-btnCreate.addEventListener("click", () => {
-  const createdBoxes = createBoxes(getValue);
-  divElementWitId.append(...createdBoxes);
-});
+btnCreate.addEventListener("click", () => createBoxes(getValue));
 
 btnDestroy.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
-  console.log(amount);
   let arrOfAmount = [];
-  for (let i = 0; i < amount; i++) arrOfAmount.push(i);
-
   let size = 30;
 
-  return arrOfAmount.map(() => {
+  for (let i = 0; i < amount; i++) {
     const divElement = document.createElement("div");
     divElement.style.backgroundColor = getRandomHexColor();
     divElement.style.width = size + "px";
     divElement.style.height = size + "px";
     size += 10;
-    return divElement;
-  });
+    arrOfAmount.push(divElement);
+  }
+
+  divElementWitId.append(...arrOfAmount);
 }
 
 function destroyBoxes() {
